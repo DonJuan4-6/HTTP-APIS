@@ -1,0 +1,313 @@
+body {
+  background:
+    radial-gradient(
+      circle at 10% 0%,
+      rgba(37, 99, 235, 0.12),
+      transparent 28rem
+    ),
+    radial-gradient(
+      circle at 100% 30%,
+      rgba(249, 115, 96, 0.11),
+      transparent 25rem
+    ),
+    #f5f7fb;
+}
+
+#root {
+  width: min(1180px, calc(100% - 40px));
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+main {
+  padding: 58px 0 76px;
+}
+
+main > h1 {
+  position: relative;
+  margin: 0 0 42px;
+  color: var(--navy);
+  font-size: clamp(2.5rem, 6vw, 5.2rem);
+  font-weight: 800;
+  letter-spacing: -0.07em;
+  line-height: 0.95;
+}
+
+main > h1::after {
+  display: block;
+  width: 74px;
+  height: 8px;
+  margin-top: 18px;
+  border-radius: 99px;
+  background: var(--coral);
+  content: "";
+}
+
+main > section {
+  position: relative;
+  padding: clamp(24px, 4vw, 48px);
+  overflow: hidden;
+  border: 1px solid rgba(228, 233, 242, 0.9);
+  border-radius: 28px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+main > section::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 170px;
+  height: 170px;
+  border-radius: 0 0 0 100%;
+  background: #eef4ff;
+  content: "";
+  pointer-events: none;
+}
+
+main > section > h2 {
+  position: relative;
+  margin: 0 0 24px;
+  color: var(--navy);
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+main > section:first-of-type > h2::before,
+main > section:last-of-type > h2::before {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--blue);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+main > section:first-of-type > h2::before {
+  content: "Explora la región";
+}
+
+main > section:last-of-type > h2::before {
+  content: "Tu colección";
+}
+
+main > section:first-of-type > input {
+  width: min(100%, 390px);
+  min-height: 50px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  outline: none;
+  background: #f8fafc;
+  color: var(--ink);
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+main > section:first-of-type > input::placeholder {
+  color: #9aa6b9;
+}
+
+main > section:first-of-type > input:focus {
+  border-color: var(--blue);
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.13);
+}
+
+button {
+  min-height: 50px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 13px;
+  background: var(--navy);
+  color: #fff;
+  font-weight: 800;
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+button:hover {
+  background: var(--blue);
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.22);
+  transform: translateY(-2px);
+}
+
+button:focus-visible {
+  outline: 3px solid rgba(249, 115, 96, 0.65);
+  outline-offset: 3px;
+}
+
+main > section:first-of-type > button {
+  margin-left: 10px;
+}
+
+main > section:first-of-type > p,
+main > section:last-of-type > p {
+  margin-top: 18px;
+  color: #c2413c;
+  font-weight: 700;
+}
+
+main > section:first-of-type > article {
+  position: relative;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 8px 28px;
+  align-items: center;
+  max-width: 620px;
+  margin-top: 34px;
+  padding: 22px 26px;
+  border: 1px solid #dbe7ff;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #f9fbff, #eef4ff);
+}
+
+main > section:first-of-type > article h2 {
+  grid-column: 2;
+  margin: 0;
+  color: var(--navy);
+  font-size: 1.7rem;
+  text-transform: capitalize;
+}
+
+main > section:first-of-type > article img {
+  grid-row: 1 / span 4;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 10px rgba(37, 99, 235, 0.2));
+}
+
+main > section:first-of-type > article p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+main > section:first-of-type > article button {
+  justify-self: start;
+  margin-top: 10px;
+  background: var(--coral);
+}
+
+main > section:first-of-type > article button:hover {
+  background: #e85d4e;
+}
+
+main > hr {
+  height: 1px;
+  margin: 54px 0;
+  border: 0;
+  background: var(--line);
+}
+
+main > section:last-of-type > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+main > section:last-of-type > article {
+  display: flex;
+  min-height: 270px;
+  flex-direction: column;
+  align-items: center;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: #fbfcff;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+main > section:last-of-type > article:hover {
+  box-shadow: 0 16px 30px rgba(29, 48, 86, 0.1);
+  transform: translateY(-4px);
+}
+
+main > section:last-of-type > article h3 {
+  align-self: stretch;
+  margin: 0;
+  color: var(--navy);
+  font-size: 1.25rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+main > section:last-of-type > article img {
+  width: 125px;
+  height: 125px;
+  margin: 4px auto 2px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 8px rgba(29, 48, 86, 0.13));
+}
+
+main > section:last-of-type > article p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+main > section:last-of-type > article button {
+  width: 100%;
+  min-height: 40px;
+  margin-top: 8px;
+  padding: 0 12px;
+  border: 1px solid #dbe3f0;
+  background: #fff;
+  color: var(--navy);
+  font-size: 0.85rem;
+}
+
+main > section:last-of-type > article button:hover {
+  border-color: var(--blue);
+  background: #eef4ff;
+  color: var(--navy);
+}
+
+@media (max-width: 620px) {
+  #root {
+    width: min(100% - 24px, 560px);
+  }
+
+  main {
+    padding-top: 34px;
+  }
+
+  main > section:first-of-type > input {
+    width: 100%;
+  }
+
+  main > section:first-of-type > button {
+    width: 100%;
+    margin: 10px 0 0;
+  }
+
+  main > section:first-of-type > article {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    padding: 20px;
+  }
+
+  main > section:first-of-type > article h2 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  main > section:first-of-type > article img {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  main > section:first-of-type > article p,
+  main > section:first-of-type > article button {
+    grid-column: 1;
+  }
+}
